@@ -419,7 +419,7 @@ body.loaded .works-grid {
    Footer
    =========================== */
 .footer {
-    padding: 100px 0 60px;
+    padding: 100px 0 80px;
     position: relative;
     overflow: hidden;
 }
@@ -473,14 +473,20 @@ body.loaded .works-grid {
 }
 
 .footer-name {
-    font-size: clamp(6rem, 15vw, 12rem);
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    padding-inline: clamp(12px, 2vw, 48px);
+    box-sizing: border-box;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1;
+    font-size: clamp(4rem, 18vw, 22rem);
     font-weight: 900;
     letter-spacing: -0.03em;
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
 }
 
 /* ===========================
@@ -560,7 +566,7 @@ body.loaded .works-grid {
     }
 
     .footer {
-        padding: 80px 0 40px;
+        padding: 80px 0 60px;
     }
 
     .footer-contact {
@@ -579,8 +585,9 @@ body.loaded .works-grid {
     }
 
     .footer-name {
-        font-size: 4rem;
-        bottom: -0.25rem;
+        font-size: clamp(3rem, 14vw, 6rem);
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
     }
 }
 
