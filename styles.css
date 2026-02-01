@@ -93,7 +93,7 @@ ul {
 
   /* Animation */
   opacity: 0;
-  transform: translateY(-40px);
+  transform: translateY(80px);
   transition: opacity var(--load-duration) var(--ease-framer),
     transform var(--load-duration) var(--ease-framer);
 
@@ -196,6 +196,15 @@ body.loaded .hero-content {
    =========================== */
 .works-grid {
     padding: 80px 0;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity var(--load-duration) var(--ease-framer) 500ms,
+        transform var(--load-duration) var(--ease-framer) 500ms;
+}
+
+body.loaded .works-grid {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .grid {
@@ -592,14 +601,16 @@ body.loaded .hero-content {
 
     .hero-name,
     .hero-nav,
-    .hero-content {
+    .hero-content,
+    .works-grid {
         opacity: 1;
         transform: none;
     }
 
     body.loaded .hero-name,
     body.loaded .hero-nav,
-    body.loaded .hero-content {
+    body.loaded .hero-content,
+    body.loaded .works-grid {
         opacity: 1;
         transform: none;
     }
