@@ -73,38 +73,35 @@ ul {
    Hero Name (edge-to-edge, but not penetrating)
    =========================== */
 .hero-name {
-  /* Break out of the container cleanly */
   position: relative;
   left: 50%;
   width: 100vw;
   margin-left: -50vw;
 
-  /* Keep it from touching the viewport edges */
-  padding-inline: clamp(12px, 2vw, 48px);
-  box-sizing: border-box;
-
-  /* Typography */
   text-align: center;
   white-space: nowrap;
-  line-height: 1;
-  font-size: clamp(4rem, 18vw, 22rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
+  line-height: 0.9;
 
-  /* Animation */
+  /* make it actually fill the viewport */
+  padding: 0;                 /* remove the safety padding */
+  font-size: 22vw;            /* aggressive scaling */
+  letter-spacing: -0.06em;    /* tighter so it stretches */
+
+  font-weight: 900;
+
   opacity: 0;
   transform: translateY(80px);
   transition: opacity var(--load-duration) var(--ease-framer),
     transform var(--load-duration) var(--ease-framer);
 
-  /* Safety */
-  overflow: hidden; /* prevents tiny overshoot from causing scroll */
+  overflow: hidden;
 }
 
 body.loaded .hero-name {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 /* ===========================
    Hero Nav (edge-to-edge, no overflow)
