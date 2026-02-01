@@ -69,9 +69,16 @@ ul {
 }
 
 .hero-name {
-    width: 100%;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
     text-align: center;
-
+    font-size: clamp(6rem, 22vw, 22rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
     /*
     font-size: clamp(6rem, 18vw, 18rem);
     font-weight: 900;
