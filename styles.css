@@ -69,13 +69,14 @@ ul {
 }
 
 .hero-name {
-    font-size: clamp(3.5rem, 12vw, 12rem);
+    font-size: clamp(6rem, 18vw, 18rem);
     font-weight: 900;
     letter-spacing: -0.03em;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     text-align: center;
+    white-space: nowrap;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(-40px);
