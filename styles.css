@@ -90,7 +90,7 @@ ul {
   font-weight: 900;
 
   opacity: 0;
-  transform: translateY(80px);
+  transform: translateY(-120px);
   transition: opacity var(--load-duration) var(--ease-framer),
     transform var(--load-duration) var(--ease-framer);
 
