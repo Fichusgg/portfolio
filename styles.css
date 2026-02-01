@@ -100,7 +100,7 @@ body.loaded .hero-name {
     right: 0;
     height: var(--nav-height);
     padding: 16px 48px;
-    background-color: var(--bg);
+    background-color: transparent;
     z-index: 1000;
     opacity: 0;
     transform: translateY(30px);
