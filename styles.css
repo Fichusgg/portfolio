@@ -65,14 +65,14 @@ ul {
    =========================== */
 .hero {
     position: relative;
-    padding: 12px 0 24px;
+    padding: 24px 0 24px;
 }
 
 .hero-name {
     position: relative;
     left: 50%;
     right: 50%;
-    width: 100vw;
+    width: 98vw;
     margin-left: -50vw;
     margin-right: -50vw;
     text-align: center;
