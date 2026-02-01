@@ -65,10 +65,14 @@ ul {
    =========================== */
 .hero {
     position: relative;
-    /* padding: 12px 0 24px; */
+    padding: 12px 0 24px;
 }
 
 .hero-name {
+    width: 100%;
+    text-align: center;
+
+    /*
     font-size: clamp(6rem, 18vw, 18rem);
     font-weight: 900;
     letter-spacing: -0.03em;
@@ -78,6 +82,7 @@ ul {
     text-align: center;
     white-space: nowrap;
     margin-bottom: 3rem;
+    */
     opacity: 0;
     transform: translateY(-40px);
     transition: opacity 600ms var(--ease-framer), transform 600ms var(--ease-framer);
