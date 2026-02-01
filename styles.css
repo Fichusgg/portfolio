@@ -70,8 +70,8 @@ ul {
 
 .hero-name {
     position: relative;
-    left: 10%;
-    right: 10%;
+    left: 50%;
+    right: 50%;
     width: 100vw;
     margin-left: -50vw;
     margin-right: -50vw;
@@ -79,19 +79,7 @@ ul {
     font-size: clamp(6rem, 22vw, 22rem);
     font-weight: 900;
     letter-spacing: -0.03em;
-
-
-    /*
-    font-size: clamp(6rem, 18vw, 18rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    text-align: center;
     white-space: nowrap;
-    margin-bottom: 3rem;
-    */
     opacity: 0;
     transform: translateY(-40px);
     transition: opacity 600ms var(--ease-framer), transform 600ms var(--ease-framer);
