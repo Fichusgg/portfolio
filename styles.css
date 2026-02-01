@@ -10,6 +10,7 @@
     --pill-outline-hover: rgba(255, 255, 255, 0.8);
     --ease-framer: cubic-bezier(0.22, 1, 0.36, 1);
     --nav-height: 72px;
+    --load-duration: 1200ms;
 }
 
 /* ===========================
@@ -93,7 +94,8 @@ ul {
   /* Animation */
   opacity: 0;
   transform: translateY(-40px);
-  transition: opacity 600ms var(--ease-framer), transform 600ms var(--ease-framer);
+  transition: opacity var(--load-duration) var(--ease-framer),
+    transform var(--load-duration) var(--ease-framer);
 
   /* Safety */
   overflow: hidden; /* prevents tiny overshoot from causing scroll */
@@ -129,8 +131,9 @@ body.loaded .hero-name {
   background-color: transparent;
 
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 600ms var(--ease-framer) 150ms, transform 600ms var(--ease-framer) 150ms;
+  transform: translateY(40px);
+  transition: opacity var(--load-duration) var(--ease-framer) 400ms,
+    transform var(--load-duration) var(--ease-framer) 400ms;
 }
 
 .hero-body {
@@ -162,8 +165,9 @@ body.loaded .hero-nav {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 600ms var(--ease-framer) 150ms, transform 600ms var(--ease-framer) 150ms;
+    transform: translateY(40px);
+    transition: opacity var(--load-duration) var(--ease-framer) 400ms,
+        transform var(--load-duration) var(--ease-framer) 400ms;
 }
 
 body.loaded .hero-content {
