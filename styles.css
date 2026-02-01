@@ -55,59 +55,82 @@ ul {
    Container
    =========================== */
 .container {
-    max-width: 1980px;
-    margin: 0 auto;
-    padding: 0 24px;
+  max-width: 1980px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ===========================
    Hero Section
    =========================== */
 .hero {
-    position: relative;
-    padding: 24px 0 24px;
+  position: relative;
+  padding: 24px 0;
 }
 
+/* ===========================
+   Hero Name (edge-to-edge, but not penetrating)
+   =========================== */
 .hero-name {
-    position: relative;
-    left: 50%;
-    right: 50%;
-    width: 98vw;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    text-align: center;
-    font-size: clamp(6rem, 22vw, 22rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
-    white-space: nowrap;
-    opacity: 0;
-    transform: translateY(-40px);
-    transition: opacity 600ms var(--ease-framer), transform 600ms var(--ease-framer);
+  /* Break out of the container cleanly */
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+
+  /* Keep it from touching the viewport edges */
+  padding-inline: clamp(12px, 2vw, 48px);
+  box-sizing: border-box;
+
+  /* Typography */
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: clamp(4rem, 18vw, 22rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 600ms var(--ease-framer), transform 600ms var(--ease-framer);
+
+  /* Safety */
+  overflow: hidden; /* prevents tiny overshoot from causing scroll */
 }
 
 body.loaded .hero-name {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
+/* ===========================
+   Hero Nav (edge-to-edge, no overflow)
+   =========================== */
 .hero-nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    height: var(--nav-height);
-    padding: 16px 48px;
-    background-color: transparent;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 600ms var(--ease-framer) 150ms, transform 600ms var(--ease-framer) 150ms;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Break out of container cleanly */
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+
+  /* Padding that won't force overflow */
+  padding: 16px clamp(16px, 3vw, 48px);
+  box-sizing: border-box;
+
+  height: var(--nav-height);
+  background-color: transparent;
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms var(--ease-framer) 150ms, transform 600ms var(--ease-framer) 150ms;
 }
 
 .hero-body {
