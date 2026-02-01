@@ -9,6 +9,7 @@
     --pill-outline: rgba(255, 255, 255, 0.35);
     --pill-outline-hover: rgba(255, 255, 255, 0.8);
     --ease-framer: cubic-bezier(0.22, 1, 0.36, 1);
+    --nav-height: 72px;
 }
 
 /* ===========================
@@ -31,6 +32,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     overflow-x: hidden;
+    padding-top: var(--nav-height);
 }
 
 a {
@@ -90,8 +92,16 @@ body.loaded .hero-name {
 
 .hero-nav {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 6rem;
+    justify-content: space-between;
+    gap: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    padding: 16px 48px;
+    background-color: var(--bg);
+    z-index: 1000;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 600ms var(--ease-framer) 150ms, transform 600ms var(--ease-framer) 150ms;
@@ -426,6 +436,10 @@ body.loaded .hero-content {
    Mobile Responsive (480px and below)
    =========================== */
 @media (max-width: 480px) {
+    :root {
+        --nav-height: 64px;
+    }
+
     .container {
         padding: 0 20px;
     }
@@ -442,8 +456,8 @@ body.loaded .hero-content {
 
     .hero-nav {
         flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 4rem;
+        gap: 1.25rem;
+        padding: 12px 20px;
     }
 
     .hero-content {
