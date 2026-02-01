@@ -303,7 +303,7 @@ body.loaded .hero-content {
 
 .about-layout {
     display: grid;
-    grid-template-columns: 58% 42%;
+    grid-template-columns: 50% 50%;
     gap: 4rem;
 }
 
