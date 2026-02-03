@@ -4,7 +4,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // ── Body loaded class (triggers hero animations on index.html) ──
-    document.body.classList.add('loaded');
+    requestAnimationFrame(function () {
+        document.body.classList.add('loaded');
+    });
 
     // ── Copy Email ──
     var copyBtn = document.getElementById('copyEmailBtn');
