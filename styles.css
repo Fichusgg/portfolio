@@ -490,6 +490,202 @@ body.loaded .works-grid {
 }
 
 /* ===========================
+   Shared: Media Placeholder
+   =========================== */
+.media-placeholder {
+    background-color: #1a1a1a;
+    width: 100%;
+}
+
+/* ===========================
+   Work Hero (works detail page)
+   =========================== */
+.work-hero {
+    position: relative;
+    height: 78vh;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.work-hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.work-hero-placeholder {
+    height: 100%;
+}
+
+/* Nav floats inside hero — cancel the sticky/bleed from .hero-nav */
+.work-hero-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+    z-index: 100;
+    opacity: 1;
+    transform: none;
+}
+
+/* Title: right-of-center, upper-middle */
+.work-hero-title {
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-55%);
+    z-index: 10;
+
+    font-size: clamp(2.8rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ===========================
+   Project Intro (works detail page)
+   =========================== */
+.project-intro {
+    padding: 100px 0 80px;
+}
+
+.project-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 64px);
+    align-items: start;
+}
+
+.project-intro-left {
+    padding-top: 0.25rem;
+}
+
+.project-intro-label {
+    font-size: 0.875rem;
+    font-weight: 300;
+    opacity: 0.65;
+}
+
+.project-intro-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    max-width: 580px;
+    justify-self: end;
+}
+
+.project-intro-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 300;
+    max-width: 68ch;
+}
+
+.project-deliverables {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.project-deliverables-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.project-deliverables-item {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.project-divider {
+    height: 1px;
+    background-color: var(--line);
+}
+
+.project-meta-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* ===========================
+   Project Images (works detail page)
+   =========================== */
+.project-images {
+    padding: 0 0 100px;
+}
+
+.project-images .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-image-large {
+    aspect-ratio: 16 / 9;
+}
+
+.project-images-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-image-half {
+    aspect-ratio: 4 / 3;
+}
+
+/* ===========================
+   Next Work Teaser (works detail page)
+   =========================== */
+.next-work {
+    padding: 80px 0 60px;
+    text-align: center;
+}
+
+.next-work .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.next-work-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.next-work-card {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    transition: transform 380ms var(--ease-framer);
+}
+
+.next-work-card:hover {
+    transform: translateY(-6px);
+}
+
+.next-work-placeholder {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 1rem;
+}
+
+.next-work-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+
+/* ===========================
    Mobile Responsive (480px and below)
    =========================== */
 @media (max-width: 480px) {
@@ -589,6 +785,57 @@ body.loaded .works-grid {
         margin-top: 4rem;
         margin-bottom: 1.5rem;
     }
+
+    /* --- Works detail page mobile --- */
+    .work-hero {
+        height: 55vh;
+        min-height: 300px;
+    }
+
+    .work-hero-title {
+        right: auto;
+        left: 24px;
+        top: 55%;
+        text-align: left;
+        white-space: normal;
+        font-size: clamp(2rem, 12vw, 3.2rem);
+    }
+
+    .work-hero-nav {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .project-intro {
+        padding: 60px 0 48px;
+    }
+
+    .project-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .project-intro-right {
+        justify-self: start;
+        max-width: 100%;
+    }
+
+    .project-images-row {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image-half {
+        aspect-ratio: 16 / 9;
+    }
+
+    .next-work {
+        padding: 60px 0 40px;
+    }
+
+    .next-work-card {
+        max-width: 100%;
+    }
 }
 
 /* ===========================
@@ -616,6 +863,15 @@ body.loaded .works-grid {
     body.loaded .hero-content,
     body.loaded .works-grid {
         opacity: 1;
+        transform: none;
+    }
+
+    /* Next work hover disabled */
+    .next-work-card {
+        transition: none;
+    }
+
+    .next-work-card:hover {
         transform: none;
     }
 }

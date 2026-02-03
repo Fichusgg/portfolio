@@ -3,92 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Works - Filip Jaern</title>
+    <title>Casa Malma Website - Filip Jaern</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="hero-nav">
-        <a href="index.html" class="pill">Home</a>
-        <a href="index.html#info" class="pill">Info</a>
-        <a href="works.html" class="pill">Works</a>
-        <a href="index.html#contact" class="pill">Contact</a>
-    </nav>
 
-    <!-- Works Grid -->
-    <section class="works-grid">
+    <!-- Section 1: Work Hero -->
+    <section class="work-hero">
+        <div class="work-hero-bg">
+            <!-- Hero image: swap src when ready -->
+            <div class="media-placeholder work-hero-placeholder"></div>
+        </div>
+
+        <!-- Floating nav (reuses .hero-nav + .pill globally) -->
+        <nav class="hero-nav work-hero-nav">
+            <a href="index.html" class="pill">Home</a>
+            <a href="index.html#info" class="pill">Info</a>
+            <a href="works.html" class="pill">Works</a>
+            <a href="index.html#contact" class="pill">Contact</a>
+        </nav>
+
+        <!-- Title overlay -->
+        <h1 class="work-hero-title">Casa Malma<br>Website</h1>
+    </section>
+
+    <!-- Section 2: Intro Block -->
+    <section class="project-intro">
         <div class="container">
-            <div class="grid">
-                <a href="works.html" class="project-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Casa Malma Website</h3>
-                        <div class="card-tags">
-                            <span class="tag">Real Estate</span>
-                            <span class="tag">2024</span>
-                        </div>
-                    </div>
-                    <div class="card-media">
-                        <img class="card-image" src="images/malmaThumb.JPG" alt="Casa Malma Website preview">
-                    </div>
-                    <div class="card-cta">
-                        <button class="cta-button">View project</button>
-                    </div>
-                </a>
+            <div class="project-intro-layout">
 
-                <a href="works.html" class="project-card">
-                    <div class="card-header">
-                        <h3 class="card-title">OnFocus</h3>
-                        <div class="card-tags">
-                            <span class="tag">Education</span>
-                            <span class="tag">2024</span>
-                        </div>
-                    </div>
-                    <div class="card-media">
-                        <img class="card-image" src="images/onfocusThumb.png" alt="OnFocus preview">
-                    </div>
-                    <div class="card-cta">
-                        <button class="cta-button">View project</button>
-                    </div>
-                </a>
+                <!-- Left: label only -->
+                <div class="project-intro-left">
+                    <p class="project-intro-label">Intro</p>
+                </div>
 
-                <a href="works.html" class="project-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Selvaggio Website</h3>
-                        <div class="card-tags">
-                            <span class="tag">Restaurant</span>
-                            <span class="tag">2025</span>
-                        </div>
-                    </div>
-                    <div class="card-media">
-                        <img class="card-image" src="images/selvaggioThumb.jpg" alt="Selvaggio Website preview">
-                    </div>
-                    <div class="card-cta">
-                        <button class="cta-button">View project</button>
-                    </div>
-                </a>
+                <!-- Right: paragraph → deliverables → divider → meta pills -->
+                <div class="project-intro-right">
+                    <p class="project-intro-text">Designed and built a modern, minimalist property website for Casa Malma focused on visual clarity and conversion. Structured the layout around lifestyle messaging, project highlights, and clean image driven sections. Implemented responsive pages, simple navigation, and strong headline plus philosophy blocks to communicate brand identity and apartment value fast.</p>
 
-                <a href="works.html" class="project-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Civic report app</h3>
-                        <div class="card-tags">
-                            <span class="tag">Service</span>
-                            <span class="tag">2025</span>
-                        </div>
+                    <div class="project-deliverables">
+                        <p class="project-deliverables-label">Deliverables:</p>
+                        <p class="project-deliverables-item">Website Design</p>
                     </div>
-                    <div class="card-media">
-                        <img class="card-image" src="images/civicAppThumb.jpg" alt="Civic report app preview">
+
+                    <div class="project-divider"></div>
+
+                    <div class="project-meta-pills">
+                        <span class="pill pill-filled">Year / 2024</span>
+                        <span class="pill pill-filled">Client / Casa Malma</span>
                     </div>
-                    <div class="card-cta">
-                        <button class="cta-button">View project</button>
-                    </div>
-                </a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Section 3: Three Images -->
+    <section class="project-images">
+        <div class="container">
+            <!-- Image 1: large full-width -->
+            <div class="media-placeholder project-image-large"></div>
+
+            <!-- Images 2 & 3: side by side -->
+            <div class="project-images-row">
+                <div class="media-placeholder project-image-half"></div>
+                <div class="media-placeholder project-image-half"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Next Work Teaser -->
+    <section class="next-work">
+        <div class="container">
+            <p class="next-work-label">Next work</p>
+            <a href="works-onfocus.html" class="next-work-card">
+                <div class="media-placeholder next-work-placeholder"></div>
+                <p class="next-work-title">OnFocus</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 5: Footer (existing component, untouched) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-contact">
