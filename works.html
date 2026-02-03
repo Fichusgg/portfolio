@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Malma Website - Filip Jaern</title>
+    <title>Works - Filip Jaern</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -11,82 +11,22 @@
 </head>
 <body>
 
-    <!-- Section 1: Work Hero -->
-    <section class="work-hero">
-        <div class="work-hero-bg">
-            <!-- Hero image: swap src when ready -->
-            <div class="media-placeholder work-hero-placeholder"></div>
-        </div>
+    <!-- Nav: .nav-solid gives it a background since there's no hero behind it -->
+    <nav class="hero-nav nav-solid">
+        <a href="index.html" class="pill">Home</a>
+        <a href="index.html#info" class="pill">Info</a>
+        <a href="works.html" class="pill">Works</a>
+        <a href="index.html#contact" class="pill">Contact</a>
+    </nav>
 
-        <!-- Floating nav (reuses .hero-nav + .pill globally) -->
-        <nav class="hero-nav work-hero-nav">
-            <a href="index.html" class="pill">Home</a>
-            <a href="index.html#info" class="pill">Info</a>
-            <a href="works.html" class="pill">Works</a>
-            <a href="index.html#contact" class="pill">Contact</a>
-        </nav>
-
-        <!-- Title overlay -->
-        <h1 class="work-hero-title">Casa Malma<br>Website</h1>
-    </section>
-
-    <!-- Section 2: Intro Block -->
-    <section class="project-intro">
+    <!-- Works grid: cards injected here by renderWorksGrid() -->
+    <section class="works-grid">
         <div class="container">
-            <div class="project-intro-layout">
-
-                <!-- Left: label only -->
-                <div class="project-intro-left">
-                    <p class="project-intro-label">Intro</p>
-                </div>
-
-                <!-- Right: paragraph → deliverables → divider → meta pills -->
-                <div class="project-intro-right">
-                    <p class="project-intro-text">Designed and built a modern, minimalist property website for Casa Malma focused on visual clarity and conversion. Structured the layout around lifestyle messaging, project highlights, and clean image driven sections. Implemented responsive pages, simple navigation, and strong headline plus philosophy blocks to communicate brand identity and apartment value fast.</p>
-
-                    <div class="project-deliverables">
-                        <p class="project-deliverables-label">Deliverables:</p>
-                        <p class="project-deliverables-item">Website Design</p>
-                    </div>
-
-                    <div class="project-divider"></div>
-
-                    <div class="project-meta-pills">
-                        <span class="pill pill-filled">Year / 2024</span>
-                        <span class="pill pill-filled">Client / Casa Malma</span>
-                    </div>
-                </div>
-
-            </div>
+            <div class="grid" id="works-grid-mount"></div>
         </div>
     </section>
 
-    <!-- Section 3: Three Images -->
-    <section class="project-images">
-        <div class="container">
-            <!-- Image 1: large full-width -->
-            <div class="media-placeholder project-image-large"></div>
-
-            <!-- Images 2 & 3: side by side -->
-            <div class="project-images-row">
-                <div class="media-placeholder project-image-half"></div>
-                <div class="media-placeholder project-image-half"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Next Work Teaser -->
-    <section class="next-work">
-        <div class="container">
-            <p class="next-work-label">Next work</p>
-            <a href="works-onfocus.html" class="next-work-card">
-                <div class="media-placeholder next-work-placeholder"></div>
-                <p class="next-work-title">OnFocus</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Section 5: Footer (existing component, untouched) -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-contact">
@@ -106,6 +46,8 @@
         </div>
     </footer>
 
+    <!-- Data first, then scripts -->
+    <script src="works-data.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

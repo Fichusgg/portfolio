@@ -133,6 +133,11 @@ body.loaded .hero-name {
     transform var(--load-duration) var(--ease-framer) 400ms;
 }
 
+/* Nav on pages with no hero behind it (works.html index) */
+.nav-solid {
+    background-color: var(--bg);
+}
+
 .hero-body {
     padding: 48px 0 24px;
 }
@@ -495,6 +500,42 @@ body.loaded .works-grid {
 .media-placeholder {
     background-color: #1a1a1a;
     width: 100%;
+}
+
+/* Shared style for <img> elements rendered by JS (replaces placeholders) */
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===========================
+   Not Found State (work.html fallback)
+   =========================== */
+.not-found {
+    display: none; /* JS toggles to flex when needed */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.not-found-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.not-found-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 /* ===========================

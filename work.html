@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - Filip Jaern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ── NOT FOUND STATE (hidden by default, shown if slug is invalid) ── -->
+    <div class="not-found" id="not-found">
+        <p class="not-found-label">404</p>
+        <h1 class="not-found-title">Project not found</h1>
+        <a href="works.html" class="pill">Back to Works</a>
+    </div>
+
+    <!-- ── WORK DETAIL (hidden by default, shown once data loads) ── -->
+    <div class="work-detail" id="work-detail" style="display:none;">
+
+        <!-- Section 1: Hero -->
+        <section class="work-hero">
+            <div class="work-hero-bg" id="work-hero-bg">
+                <!-- JS inserts <img> or placeholder here -->
+            </div>
+            <nav class="hero-nav work-hero-nav">
+                <a href="index.html" class="pill">Home</a>
+                <a href="index.html#info" class="pill">Info</a>
+                <a href="works.html" class="pill">Works</a>
+                <a href="index.html#contact" class="pill">Contact</a>
+            </nav>
+            <h1 class="work-hero-title" id="work-hero-title"><!-- JS fills --></h1>
+        </section>
+
+        <!-- Section 2: Intro -->
+        <section class="project-intro">
+            <div class="container">
+                <div class="project-intro-layout">
+                    <div class="project-intro-left">
+                        <p class="project-intro-label">Intro</p>
+                    </div>
+                    <div class="project-intro-right">
+                        <p class="project-intro-text" id="work-intro-text"><!-- JS fills --></p>
+
+                        <div class="project-deliverables">
+                            <p class="project-deliverables-label">Deliverables:</p>
+                            <div id="work-deliverables"><!-- JS fills --></div>
+                        </div>
+
+                        <div class="project-divider"></div>
+
+                        <div class="project-meta-pills" id="work-meta-pills"><!-- JS fills --></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Three Images -->
+        <section class="project-images">
+            <div class="container">
+                <div id="work-image-large"><!-- JS fills --></div>
+                <div class="project-images-row">
+                    <div id="work-image-half-1"><!-- JS fills --></div>
+                    <div id="work-image-half-2"><!-- JS fills --></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Next Work -->
+        <section class="next-work">
+            <div class="container">
+                <p class="next-work-label">Next work</p>
+                <a href="#" class="next-work-card" id="next-work-link">
+                    <div id="next-work-image"><!-- JS fills --></div>
+                    <p class="next-work-title" id="next-work-title"><!-- JS fills --></p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 5: Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-contact">
+                    <p class="contact-text">Ready to work together? Let's talk about freelance projects, collaborations, and full-time roles.</p>
+                    <div class="contact-pills">
+                        <a href="mailto:filip@jaern.se" class="pill pill-filled">filip@jaern.se</a>
+                        <button class="pill pill-copy" id="copyEmailBtn">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="5.5" y="5.5" width="8" height="8" rx="1" stroke="currentColor"/>
+                                <path d="M3.5 10.5H2.5C2.22386 10.5 2 10.2761 2 10V3C2 2.72386 2.22386 2.5 2.5 2.5H9.5C9.77614 2.5 10 2.72386 10 3V4" stroke="currentColor"/>
+                            </svg>
+                            <span class="copy-label">Copy Email</span>
+                        </button>
+                    </div>
+                </div>
+                <h2 class="footer-name">FILIP JAERN</h2>
+            </div>
+        </footer>
+
+    </div><!-- end #work-detail -->
+
+    <!-- Data first, then scripts -->
+    <script src="works-data.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
