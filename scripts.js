@@ -103,7 +103,7 @@ function renderWorksGrid(data) {
                     '</div>',
                 '</div>',
                 '<div class="card-media">',
-                    imageOrPlaceholder(project.heroImage, 'card-image'),
+                    imageOrPlaceholder(project.thumb || project.heroImage, 'card-image'),
                 '</div>',
                 '<div class="card-cta">',
                     '<button class="cta-button">View project</button>',
