@@ -6,15 +6,19 @@
     <title>Works - Filip Jaern</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="works-page">
 
     <!-- Nav: .nav-solid gives it a background since there's no hero behind it -->
     <nav class="hero-nav nav-solid">
         <a href="index.html" class="pill">Home</a>
-        <a href="index.html#info" class="pill">Info</a>
+        <a href="index.html#aboutme" class="pill">Info</a>
         <a href="works.html" class="pill">Works</a>
         <a href="index.html#contact" class="pill">Contact</a>
     </nav>
@@ -22,17 +26,20 @@
     <!-- Works grid: cards injected here by renderWorksGrid() -->
     <section class="works-grid">
         <div class="container">
+            <div class="works-header">
+                <p class="works-title">Featured works</p>
+            </div>
             <div class="grid" id="works-grid-mount"></div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer-contact">
                 <p class="contact-text">Ready to work together? Let's talk about freelance projects, collaborations, and full-time roles.</p>
                 <div class="contact-pills">
-                    <a href="/cdn-cgi/l/email-protection#89efe0e5e0f9c9e3e8ecfbe7a7faec" class="pill pill-filled"><span class="__cf_email__" data-cfemail="4127282d2831012b2024332f6f3224">[email&#160;protected]</span></a>
+                    <a href="mailto:filip@jaern.se" class="pill pill-filled">filip@jaern.se</a>
                     <button class="pill pill-copy" id="copyEmailBtn">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="5.5" y="5.5" width="8" height="8" rx="1" stroke="currentColor"/>
@@ -46,4 +53,8 @@
         </div>
     </footer>
 
-    <!-- D
+    <!-- Data first, then scripts -->
+    <script src="works-data.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
