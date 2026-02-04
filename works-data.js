@@ -58,7 +58,7 @@ window.WORKS_DATA = [
             "Year": "2024",
             "Client": "OnFocus"
         },
-        images: ["images/On/On5.jpg", "images/On/On6.jpg", "images/On/On7.jpg"],
+        images: ["images/On/On5.png", "images/On/On6.png", "images/On/On7.png"],
         nextPreviewImage: ""
     },
     {
