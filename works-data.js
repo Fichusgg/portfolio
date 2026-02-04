@@ -35,7 +35,7 @@ window.WORKS_DATA = [
         industry: "Real Estate",
         year: "2024",
         thumb: "images/Malma/malmaThumb.JPG",
-        heroImage: "images/Malma/Malma1.png",
+        heroImage: "images/Malma/malmaThumb.JPG",
         introText: "Designed and built a modern, minimalist property website for Casa Malma focused on visual clarity and conversion. Structured the layout around lifestyle messaging, project highlights, and clean image driven sections. Implemented responsive pages, simple navigation, and strong headline plus philosophy blocks to communicate brand identity and apartment value fast.",
         deliverables: ["Website Design"],
         meta: {
@@ -51,7 +51,7 @@ window.WORKS_DATA = [
         industry: "Education",
         year: "2024",
         thumb: "images/On/onfocusThumb.png",
-        heroImage: "images/On/On1.jpg",
+        heroImage: "images/On/onfocusThumb.png",
         introText: "Placeholder intro text for OnFocus. Replace this with the actual project description when ready.",
         deliverables: ["App Design", "iOS Development"],
         meta: {
@@ -67,7 +67,7 @@ window.WORKS_DATA = [
         industry: "Restaurant",
         year: "2025",
         thumb: "images/Selva/selvaggioThumb.jpg",
-        heroImage: "images/Selva/Selva1.png",
+        heroImage: "images/Selva/selvaggioThumb.jpg",
         introText: "Placeholder intro text for Selvaggio. Replace this with the actual project description when ready.",
         deliverables: ["Website Design", "UX / UI Design"],
         meta: {
@@ -83,7 +83,7 @@ window.WORKS_DATA = [
         industry: "Service",
         year: "2025",
         thumb: "images/Civic/civicAppThumb.jpg",
-        heroImage: "images/Civic/Civic1.jpg",
+        heroImage: "images/Civic/civicAppThumb.jpg",
         introText: "Placeholder intro text for Civic Report App. Replace this with the actual project description when ready.",
         deliverables: ["App Design", "iOS Development", "UX / UI Design"],
         meta: {
@@ -99,7 +99,7 @@ window.WORKS_DATA = [
         industry: "TBD",
         year: "TBD",
         thumb: "images/Cohen/cohenThumb.png",
-        heroImage: "images/Cohen/Cohen1.png",
+        heroImage: "images/Cohen/cohenThumb.png",
         introText: "Project details coming soon.",
         deliverables: ["Project details coming soon"],
         meta: {

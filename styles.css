@@ -307,8 +307,8 @@ body.loaded .works-grid {
 
 .cta-button {
     padding: 12px 24px;
-    border: 1px solid var(--text);
-    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
     color: var(--text);
     border-radius: 999px;
     font-size: 0.875rem;
@@ -577,6 +577,14 @@ body.loaded .works-grid {
 
 .work-hero-placeholder {
     height: 100%;
+}
+
+.work-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
 }
 
 /* Nav floats inside hero — cancel the sticky/bleed from .hero-nav */
