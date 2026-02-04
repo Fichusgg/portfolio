@@ -58,7 +58,7 @@ window.WORKS_DATA = [
             "Year": "2024",
             "Client": "OnFocus"
         },
-        images: ["images/On/On1.jpg", "images/On/On2.jpg", "images/On/On3.jpg"],
+        images: ["images/On/On5.jpg", "images/On/On6.jpg", "images/On/On7.jpg"],
         nextPreviewImage: ""
     },
     {
@@ -69,7 +69,7 @@ window.WORKS_DATA = [
         thumb: "images/Selva/selvaggioThumb.jpg",
         heroImage: "images/Selva/selvaggioThumb.jpg",
         introText: "Placeholder intro text for Selvaggio. Replace this with the actual project description when ready.",
-        deliverables: ["Website Design", "UX / UI Design"],
+        deliverables: ["Website Design", "UX / UI Design, CMS Integration"],
         meta: {
             "Year": "2025",
             "Client": "Selvaggio"
