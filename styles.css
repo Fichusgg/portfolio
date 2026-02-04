@@ -4,11 +4,13 @@
 :root {
     --bg: #000;
     --text: #fff;
+    --accent: #00ff41; /* terminal green signature */
     --muted: rgba(255, 255, 255, 0.5);
     --line: rgba(255, 255, 255, 0.1);
     --pill-outline: rgba(255, 255, 255, 0.35);
     --pill-outline-hover: rgba(255, 255, 255, 0.8);
     --ease-framer: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --nav-height: 72px;
     --load-duration: 1200ms;
 }
@@ -27,13 +29,42 @@ html {
 }
 
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     font-weight: 400;
     line-height: 1.5;
     overflow-x: hidden;
     padding-top: 0;
+    position: relative;
+}
+
+/* Film grain texture overlay - signature tactile detail */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.035;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: grain 0.25s steps(8) infinite;
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-3%, -2%); }
+    20% { transform: translate(2%, -3%); }
+    30% { transform: translate(-2%, 3%); }
+    40% { transform: translate(3%, -1%); }
+    50% { transform: translate(-1%, 2%); }
+    60% { transform: translate(2%, 3%); }
+    70% { transform: translate(-3%, -1%); }
+    80% { transform: translate(1%, 2%); }
+    90% { transform: translate(-2%, -3%); }
 }
 
 body.works-page {
@@ -79,7 +110,7 @@ ul {
 }
 
 /* ===========================
-   Hero Name (edge-to-edge, but not penetrating)
+   Hero Name with Glitch Effect
    =========================== */
 .hero-name {
   position: relative;
@@ -91,12 +122,10 @@ ul {
   white-space: nowrap;
   line-height: 0.9;
 
-  /* make it actually fill the viewport */
-  padding: 0;                 /* remove the safety padding */
-  font-size: 22vw;            /* aggressive scaling */
-  letter-spacing: -0.06em;    /* tighter so it stretches */
-
-  font-weight: 900;
+  padding: 0;
+  font-size: 22vw;
+  letter-spacing: -0.06em;
+  font-weight: 700;
 
   opacity: 0;
   transform: translateY(-120px);
@@ -104,6 +133,78 @@ ul {
     transform var(--load-duration) var(--ease-framer);
 
   overflow: hidden;
+}
+
+/* Glitch layers using data attribute */
+.hero-name::before,
+.hero-name::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.hero-name::before {
+    color: var(--accent);
+    z-index: -1;
+    animation: glitch1 2.8s infinite;
+    opacity: 0;
+}
+
+.hero-name::after {
+    color: #ff00de;
+    z-index: -2;
+    animation: glitch2 3.2s infinite;
+    opacity: 0;
+}
+
+@keyframes glitch1 {
+    0%, 88%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    89% {
+        opacity: 0.8;
+        transform: translate(-3px, 2px);
+    }
+    90% {
+        opacity: 0;
+        transform: translate(2px, -1px);
+    }
+    91% {
+        opacity: 0.6;
+        transform: translate(-2px, 1px);
+    }
+    92%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch2 {
+    0%, 90%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    91% {
+        opacity: 0.7;
+        transform: translate(3px, -2px);
+    }
+    92% {
+        opacity: 0;
+        transform: translate(-2px, 2px);
+    }
+    93% {
+        opacity: 0.5;
+        transform: translate(1px, -1px);
+    }
+    94%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
 }
 
 body.loaded .hero-name {
@@ -163,12 +264,15 @@ body.loaded .hero-nav {
     border-radius: 999px;
     font-size: 0.875rem;
     font-weight: 400;
-    transition: border-color 250ms ease;
+    font-family: 'Space Mono', monospace;
+    transition: border-color 250ms ease, box-shadow 250ms ease;
     background-color: var(--bg);
+    position: relative;
 }
 
 .pill:hover {
-    border-color: var(--pill-outline-hover);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.3);
 }
 
 .hero-content {
@@ -198,7 +302,7 @@ body.loaded .hero-content {
 .hero-intro {
     max-width: 420px;
     font-size: 1.125rem;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: 300;
 }
 
@@ -224,6 +328,7 @@ body.loaded .hero-content {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--muted);
+    font-family: 'Space Mono', monospace;
 }
 
 body.loaded .works-grid {
@@ -237,6 +342,7 @@ body.loaded .works-grid {
     gap: 32px;
 }
 
+/* Breathing grid - cards drift subtly */
 .project-card {
     position: relative;
     aspect-ratio: 16 / 10;
@@ -244,6 +350,14 @@ body.loaded .works-grid {
     border: 1px solid var(--line);
     display: block;
     cursor: pointer;
+    transition: transform 600ms var(--ease-framer), border-color 400ms ease, box-shadow 400ms ease;
+    will-change: transform;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(0, 255, 65, 0.15);
+    transform: translateY(-4px);
 }
 
 .card-header {
@@ -276,6 +390,7 @@ body.loaded .works-grid {
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 400;
+    font-family: 'Space Mono', monospace;
 }
 
 .card-media {
@@ -289,11 +404,11 @@ body.loaded .works-grid {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 550ms var(--ease-framer);
+    transition: transform 600ms var(--ease-framer);
 }
 
 .project-card:hover .card-image {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 .card-cta {
@@ -308,26 +423,29 @@ body.loaded .works-grid {
 .cta-button {
     padding: 12px 24px;
     border: 1px solid var(--text);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
     color: var(--text);
     border-radius: 999px;
     font-size: 0.875rem;
     font-weight: 400;
+    font-family: 'Space Mono', monospace;
     opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 400ms var(--ease-framer), transform 400ms var(--ease-framer);
+    transform: translateY(8px);
+    transition: opacity 400ms var(--ease-framer), transform 400ms var(--ease-framer), border-color 250ms ease;
 }
 
 .project-card:hover .cta-button {
     opacity: 1;
     transform: translateY(0);
+    border-color: var(--accent);
 }
 
 .project-card:hover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 5;
 }
 
@@ -336,10 +454,9 @@ body.loaded .works-grid {
    =========================== */
 .about {
   padding: 80px 0;
-  overflow-x: clip; /* prevents any accidental horizontal scroll */
+  overflow-x: clip;
 }
 
-/* Use fractions, not percentages */
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -347,26 +464,25 @@ body.loaded .works-grid {
   align-items: start;
 }
 
-/* Keep the right column readable */
 .about-right {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 
-  max-width: 680px;     /* stops insane long lines */
-  justify-self: end;    /* keeps it on the right */
+  max-width: 680px;
+  justify-self: end;
 }
 
-/* Left side stays as spacer */
 .about-left {
   min-width: 0;
 }
 
-/* Text styles */
 .about-label {
   font-size: 0.875rem;
   opacity: 0.65;
   font-weight: 300;
+  font-family: 'Space Mono', monospace;
+  color: var(--accent);
 }
 
 .about-text {
@@ -374,7 +490,7 @@ body.loaded .works-grid {
   line-height: 1.6;
   font-weight: 300;
 
-  max-width: 68ch; /* best practice for paragraph line length */
+  max-width: 68ch;
 } 
 
 /* ===========================
@@ -417,6 +533,11 @@ body.loaded .works-grid {
     align-items: center;
     padding: 2rem 0;
     border-bottom: 1px solid var(--line);
+    transition: border-color 250ms ease;
+}
+
+.service-item:hover {
+    border-color: var(--accent);
 }
 
 .service-item:first-child {
@@ -427,6 +548,7 @@ body.loaded .works-grid {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.05em;
+    font-family: 'Space Mono', monospace;
 }
 
 .service-item.muted .service-text {
@@ -436,6 +558,12 @@ body.loaded .works-grid {
 .chevron {
     opacity: 0.3;
     color: var(--text);
+    transition: opacity 250ms ease, color 250ms ease;
+}
+
+.service-item:hover .chevron {
+    opacity: 0.8;
+    color: var(--accent);
 }
 
 .service-item.muted .chevron {
@@ -478,6 +606,12 @@ body.loaded .works-grid {
     font-weight: 400;
 }
 
+.pill-filled:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 16px rgba(0, 255, 65, 0.4);
+}
+
 .pill-copy {
     display: flex;
     align-items: center;
@@ -488,15 +622,18 @@ body.loaded .works-grid {
     border-radius: 999px;
     padding: 10px 18px;
     font-size: 0.875rem;
-    transition: border-color 250ms ease, background-color 250ms ease;
+    font-family: 'Space Mono', monospace;
+    transition: border-color 250ms ease, background-color 250ms ease, box-shadow 250ms ease;
 }
 
 .pill-copy:hover {
-    border-color: var(--pill-outline-hover);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
 }
 
 .pill-copy.copied {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 255, 65, 0.1);
+    border-color: var(--accent);
 }
 
 .footer-name {
@@ -512,7 +649,7 @@ body.loaded .works-grid {
     white-space: nowrap;
     line-height: 1;
     font-size: clamp(4rem, 18vw, 22rem);
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: -0.03em;
 }
 
@@ -524,7 +661,6 @@ body.loaded .works-grid {
     width: 100%;
 }
 
-/* Shared style for <img> elements rendered by JS (replaces placeholders) */
 .placeholder-img {
     width: 100%;
     height: 100%;
@@ -533,10 +669,10 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Not Found State (work.html fallback)
+   Not Found State
    =========================== */
 .not-found {
-    display: none; /* JS toggles to flex when needed */
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -552,6 +688,8 @@ body.loaded .works-grid {
     opacity: 0.4;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    font-family: 'Space Mono', monospace;
+    color: var(--accent);
 }
 
 .not-found-title {
@@ -561,7 +699,7 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Work Hero (works detail page)
+   Work Hero
    =========================== */
 .work-hero {
     position: relative;
@@ -579,7 +717,6 @@ body.loaded .works-grid {
     height: 100%;
 }
 
-/* Nav floats inside hero — cancel the sticky/bleed from .hero-nav */
 .work-hero-nav {
     position: absolute;
     top: 0;
@@ -591,7 +728,6 @@ body.loaded .works-grid {
     transform: none;
 }
 
-/* Title: right-of-center, upper-middle */
 .work-hero-title {
     position: absolute;
     right: 12%;
@@ -600,7 +736,7 @@ body.loaded .works-grid {
     z-index: 10;
 
     font-size: clamp(2.8rem, 7vw, 7rem);
-    font-weight: 900;
+    font-weight: 700;
     line-height: 0.92;
     letter-spacing: -0.03em;
     color: var(--text);
@@ -609,7 +745,7 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Project Intro (works detail page)
+   Project Intro
    =========================== */
 .project-intro {
     padding: 100px 0 80px;
@@ -630,6 +766,8 @@ body.loaded .works-grid {
     font-size: 0.875rem;
     font-weight: 300;
     opacity: 0.65;
+    font-family: 'Space Mono', monospace;
+    color: var(--accent);
 }
 
 .project-intro-right {
@@ -659,6 +797,7 @@ body.loaded .works-grid {
     opacity: 0.5;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    font-family: 'Space Mono', monospace;
 }
 
 .project-deliverables-item {
@@ -678,7 +817,7 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Project Images (works detail page)
+   Project Images
    =========================== */
 .project-images {
     padding: 0 0 100px;
@@ -705,7 +844,7 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Next Work Teaser (works detail page)
+   Next Work Teaser
    =========================== */
 .next-work {
     padding: 80px 0 60px;
@@ -725,17 +864,20 @@ body.loaded .works-grid {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1.5rem;
+    font-family: 'Space Mono', monospace;
 }
 
 .next-work-card {
     display: block;
     width: 100%;
     max-width: 480px;
-    transition: transform 380ms var(--ease-framer);
+    transition: transform 380ms var(--ease-framer), box-shadow 380ms ease;
+    border: 1px solid transparent;
 }
 
 .next-work-card:hover {
     transform: translateY(-6px);
+    box-shadow: 0 0 24px rgba(0, 255, 65, 0.2);
 }
 
 .next-work-placeholder {
@@ -749,7 +891,7 @@ body.loaded .works-grid {
 }
 
 /* ===========================
-   Mobile Responsive (480px and below)
+   Mobile Responsive
    =========================== */
 @media (max-width: 480px) {
     :root {
@@ -849,7 +991,6 @@ body.loaded .works-grid {
         margin-bottom: 1.5rem;
     }
 
-    /* --- Works detail page mobile --- */
     .work-hero {
         height: 55vh;
         min-height: 300px;
@@ -913,6 +1054,10 @@ body.loaded .works-grid {
         transition-duration: 0.01ms !important;
     }
 
+    body::before {
+        animation: none;
+    }
+
     .hero-name,
     .hero-nav,
     .hero-content,
@@ -931,12 +1076,13 @@ body.loaded .works-grid {
         transform: none;
     }
 
-    /* Next work hover disabled */
-    .next-work-card {
+    .next-work-card,
+    .project-card {
         transition: none;
     }
 
-    .next-work-card:hover {
+    .next-work-card:hover,
+    .project-card:hover {
         transform: none;
     }
 }

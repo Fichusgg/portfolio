@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('work-detail')) {
         initWorkDetail(window.WORKS_DATA || []);
     }
+
+    // ── Subtle parallax on project cards ──
+    initCardParallax();
 });
 
 // ===========================
@@ -81,6 +84,60 @@ function imageOrPlaceholder(url, extraClasses) {
 }
 
 // ===========================
+// Subtle Parallax Effect on Project Cards
+// ===========================
+
+/**
+ * Cards drift slightly as you scroll — creates a breathing, alive grid.
+ * Only runs if user hasn't disabled motion.
+ */
+function initCardParallax() {
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+
+    var cards = document.querySelectorAll('.project-card');
+    if (!cards.length) return;
+
+    var ticking = false;
+
+    function updateCardPositions() {
+        var scrollY = window.pageYOffset;
+        
+        cards.forEach(function(card, index) {
+            var rect = card.getBoundingClientRect();
+            var cardCenter = rect.top + rect.height / 2;
+            var viewportCenter = window.innerHeight / 2;
+            var distance = cardCenter - viewportCenter;
+            
+            // Subtle drift based on distance from viewport center
+            // Alternating direction for visual interest
+            var drift = (distance / 80) * (index % 2 === 0 ? 1 : -1);
+            
+            // Only apply if card is in viewport
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                card.style.transform = 'translateY(' + drift + 'px)';
+            }
+        });
+        
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateCardPositions);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Initial position
+    updateCardPositions();
+}
+
+// ===========================
 // Works Grid Renderer (works.html)
 // ===========================
 
@@ -92,9 +149,9 @@ function renderWorksGrid(data) {
     var mount = document.getElementById('works-grid-mount');
     if (!mount || !data.length) return;
 
-    mount.innerHTML = data.map(function (project) {
+    mount.innerHTML = data.map(function (project, index) {
         return [
-            '<a href="work.html?id=' + project.id + '" class="project-card">',
+            '<a href="work.html?id=' + project.id + '" class="project-card" data-index="' + index + '">',
                 '<div class="card-header">',
                     '<h3 class="card-title">' + project.title + '</h3>',
                     '<div class="card-tags">',
@@ -111,6 +168,9 @@ function renderWorksGrid(data) {
             '</a>'
         ].join('');
     }).join('');
+
+    // Reinit parallax after grid is rendered
+    initCardParallax();
 }
 
 // ===========================

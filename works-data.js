@@ -18,7 +18,6 @@
  *   title           → Project name shown on cards and detail hero.
  *   industry        → Tag pill on the card (e.g. "Real Estate").
  *   year            → Tag pill on the card (e.g. "2024").
- *   thumb           → Image for grids (works page). Use the *Thumb file.
  *   heroImage       → Full-bleed hero on the detail page.
  *   introText       → Paragraph in the intro block.
  *   deliverables    → Array of strings listed under "Deliverables".
@@ -34,15 +33,14 @@ window.WORKS_DATA = [
         title: "Casa Malma Website",
         industry: "Real Estate",
         year: "2024",
-        thumb: "images/Malma/malmaThumb.JPG",
-        heroImage: "images/Malma/Malma1.png",
+        heroImage: "",
         introText: "Designed and built a modern, minimalist property website for Casa Malma focused on visual clarity and conversion. Structured the layout around lifestyle messaging, project highlights, and clean image driven sections. Implemented responsive pages, simple navigation, and strong headline plus philosophy blocks to communicate brand identity and apartment value fast.",
         deliverables: ["Website Design"],
         meta: {
             "Year": "2024",
             "Client": "Casa Malma"
         },
-        images: ["images/Malma/Malma1.png", "images/Malma/Malma2.png", "images/Malma/Malma3.png"],
+        images: ["", "", ""],
         nextPreviewImage: ""
     },
     {
@@ -50,15 +48,14 @@ window.WORKS_DATA = [
         title: "OnFocus",
         industry: "Education",
         year: "2024",
-        thumb: "images/On/onfocusThumb.png",
-        heroImage: "images/On/On1.jpg",
+        heroImage: "",
         introText: "Placeholder intro text for OnFocus. Replace this with the actual project description when ready.",
         deliverables: ["App Design", "iOS Development"],
         meta: {
             "Year": "2024",
             "Client": "OnFocus"
         },
-        images: ["images/On/On1.jpg", "images/On/On2.jpg", "images/On/On3.jpg"],
+        images: ["", "", ""],
         nextPreviewImage: ""
     },
     {
@@ -66,15 +63,14 @@ window.WORKS_DATA = [
         title: "Selvaggio Website",
         industry: "Restaurant",
         year: "2025",
-        thumb: "images/Selva/selvaggioThumb.jpg",
-        heroImage: "images/Selva/Selva1.png",
+        heroImage: "",
         introText: "Placeholder intro text for Selvaggio. Replace this with the actual project description when ready.",
         deliverables: ["Website Design", "UX / UI Design"],
         meta: {
             "Year": "2025",
             "Client": "Selvaggio"
         },
-        images: ["images/Selva/Selva1.png", "images/Selva/Selva2.png", "images/Selva/SelvaCMS.png"],
+        images: ["", "", ""],
         nextPreviewImage: ""
     },
     {
@@ -82,31 +78,14 @@ window.WORKS_DATA = [
         title: "Civic Report App",
         industry: "Service",
         year: "2025",
-        thumb: "images/Civic/civicAppThumb.jpg",
-        heroImage: "images/Civic/Civic1.jpg",
+        heroImage: "",
         introText: "Placeholder intro text for Civic Report App. Replace this with the actual project description when ready.",
         deliverables: ["App Design", "iOS Development", "UX / UI Design"],
         meta: {
             "Year": "2025",
             "Client": "City of Stockholm"
         },
-        images: ["images/Civic/Civic1.jpg", "images/Civic/Civic3.jpg", "images/Civic/Civic4.jpg"],
-        nextPreviewImage: ""
-    },
-    {
-        id: "cohen",
-        title: "Cohen",
-        industry: "TBD",
-        year: "TBD",
-        thumb: "images/Cohen/cohenThumb.png",
-        heroImage: "images/Cohen/Cohen1.png",
-        introText: "Project details coming soon.",
-        deliverables: ["Project details coming soon"],
-        meta: {
-            "Year": "TBD",
-            "Client": "Cohen"
-        },
-        images: ["images/Cohen/Cohen1.png", "images/Cohen/Cohen2.png", ""],
+        images: ["", "", ""],
         nextPreviewImage: ""
     }
 ];
