@@ -36,7 +36,7 @@ window.WORKS_DATA = [
         year: "2024",
         thumb: "images/Malma/malmaThumb.JPG",
         heroImage: "images/Malma/malmaThumb.JPG",
-        introText: "Designed and built a modern, minimalist property website for Casa Malma focused on visual clarity and conversion. Structured the layout around lifestyle messaging, project highlights, and clean image driven sections. Implemented responsive pages, simple navigation, and strong headline plus philosophy blocks to communicate brand identity and apartment value fast.",
+        introText: "Built a production website for a real business with a focus on clarity, speed, and not overdesigning. I handled structure, layout, and responsiveness, learning how real constraints and client needs matter more than flashy visuals.",
         deliverables: ["Website Design"],
         meta: {
             "Year": "2024",
@@ -52,7 +52,7 @@ window.WORKS_DATA = [
         year: "2024",
         thumb: "images/On/onfocusThumb.png",
         heroImage: "images/On/onfocusThumb.png",
-        introText: "Placeholder intro text for OnFocus. Replace this with the actual project description when ready.",
+        introText: "Designed and developed a SwiftUI app in Xcode, owning both UX and logic. The project started rough and exposed my weak points in state management and data flow, but it forced me to improve structure, simplify decisions, and think like a product, not just a coder.",
         deliverables: ["App Design", "iOS Development"],
         meta: {
             "Year": "2024",
@@ -68,7 +68,7 @@ window.WORKS_DATA = [
         year: "2025",
         thumb: "images/Selva/selvaggioThumb.jpg",
         heroImage: "images/Selva/selvaggioThumb.jpg",
-        introText: "Placeholder intro text for Selvaggio. Replace this with the actual project description when ready.",
+        introText: "Created a website focused on stronger visual identity and layout decisions. This project pushed my design skills and made it clear where my taste is improving and where it still needs work, especially in hierarchy and spacing.",
         deliverables: ["Website Design", "UX / UI Design, CMS Integration"],
         meta: {
             "Year": "2025",
@@ -84,7 +84,7 @@ window.WORKS_DATA = [
         year: "2025",
         thumb: "images/Civic/civicAppThumb.jpg",
         heroImage: "images/Civic/civicAppThumb.jpg",
-        introText: "Placeholder intro text for Civic Report App. Replace this with the actual project description when ready.",
+        introText: "Started as a civic app design that won first place in a design contest. I am now trying to turn it into a real AI powered product, which has been far harder than the design itself and highlighted the gap between a winning concept and a usable, scalable application.",
         deliverables: ["App Design", "iOS Development", "UX / UI Design"],
         meta: {
             "Year": "2025",
@@ -96,14 +96,14 @@ window.WORKS_DATA = [
     {
         id: "cohen",
         title: "Cohen",
-        industry: "TBD",
-        year: "TBD",
+        industry: "Museum Volunteer Project",
+        year: "2024",
         thumb: "images/Cohen/cohenThumb.png",
         heroImage: "images/Cohen/cohenThumb.png",
-        introText: "Project details coming soon.",
-        deliverables: ["Project details coming soon"],
+        introText: "Volunteered to generate a website with minimal direction, which turned into an exercise in dealing with ambiguity. It taught me how unclear requirements slow everything down and why asking the right questions is as important as writing code.",
+        deliverables: ["Framer Development", "Website Design"],
         meta: {
-            "Year": "TBD",
+            "Year": "2024",
             "Client": "Cohen"
         },
         images: ["images/Cohen/Cohen1.png", "images/Cohen/Cohen2.png", ""],
